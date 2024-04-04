@@ -20,8 +20,11 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
+from prof.views import edit_profile
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('auth.urls', namespace='auth')),
+    path('profile/edit/', edit_profile, name='edit_profile'),
 
 ]
