@@ -15,10 +15,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.contrib.sitemaps.views import index
 from django.urls import path, include
 
 from django.conf.urls.static import static
 from django.conf import settings
+
+import arenda
+import prof
+from news.views import new
 
 from prof.views import edit_profile
 
@@ -26,5 +31,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('auth.urls', namespace='auth')),
     path('profile/edit/', edit_profile, name='edit_profile'),
+    path('main/', include('news.urls', namespace='main')),
+    path('prof/', include('prof.urls', namespace='prof')),
 
 ]

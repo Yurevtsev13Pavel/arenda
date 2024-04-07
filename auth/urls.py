@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django.contrib.auth.views import LoginView
+from django.contrib.sitemaps.views import index
 from django.urls import path, reverse_lazy
 from django.views.generic import CreateView
 
@@ -11,5 +12,6 @@ urlpatterns = [
                                         success_url=reverse_lazy('auth:login'),
                                         form_class=UserCreationForm,
                                         model = User), name = 'sign-up'),
-    path('sign-in/', LoginView.as_view(template_name = 'sign-in.html'),  name='login')
+    path('sign-in/', LoginView.as_view(template_name = 'sign-in.html'),  name='login'),
+
 ]

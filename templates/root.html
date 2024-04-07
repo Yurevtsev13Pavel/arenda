@@ -31,15 +31,18 @@
         margin: 0px 10px 0px 10px;
         font-size: 18px;
     }
+
 </style>
     <div class="menu">
         <div class="logo"><h6>Сервис для аренды недвижимости </h6></div>
         <div class="men">
-            <a href="#">Главная</a>
+            <a href="{% url 'main:main' %}">Главная</a>
             <a href="#">Просмотр жилья</a>
             <a href="#">Подать заявку</a>
-            <a href="#">Мой профиль</a>
+            <a href="{% url 'prof:edit_pro' pk=user.pk %}">Мой профиль</a>
         </div>
     </div>
+{% block content %}
+{% endblock %}
 </body>
 </html>
