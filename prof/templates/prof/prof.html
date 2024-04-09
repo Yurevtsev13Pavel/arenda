@@ -10,7 +10,8 @@
                     <p>{{ i.user }}</p>
                     <p>{{ i.bio }}</p>
                     <p>{{ i.location }}</p>
-                    <a class="btn btn-primary" href="{% url 'prof:prof_update' i.id%}">Изменить<a>
+                    <a class="btn btn-primary" href="{% url 'prof:prof_update' i.id %}">Изменить<a>
+                        <a href="{% url 'prof:prof_delete' i.id %}" class="btn btn-danger ms-2">Удалить</a>
                 </blockquote>
             </div>
         </div>

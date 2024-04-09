@@ -1,0 +1,13 @@
+{% extends 'root.html' %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center mt-5">
+    <div style="margin: 2%;" class="d-flex justify-content-center align-items-center flex-column">
+        <h3>Вы точно хотите удалить Профиль?</h3><br>
+        <form method="post" style="width: 50%;" class="d-flex justify-content-center">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger" style="font-size: 22px;">Подтвердить</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

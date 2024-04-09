@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect, get_object_or_404
-from django.views.generic import UpdateView
+from django.views.generic import UpdateView, DeleteView
 
 from report.models import Report
 from .models import Profile
@@ -37,9 +37,15 @@ def prof_create_view(request):
         vacancies.user = request.user
         vacancies.save()
 
-        return redirect('object:main')
+        return redirect('prof:edit_pro')
 
     else:
         form = ProfileForm()
 
     return render(request, 'prof/prof_create.html', {'form': form})
+
+
+class ProfileDeleteView(DeleteView):
+    model = Profile
+    success_url = '/prof/prof/'
+    template_name = 'prof/prof_delete.html'
