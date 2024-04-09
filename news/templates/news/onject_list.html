@@ -1,0 +1,15 @@
+{% extends 'root.html' %}
+
+{% block content %}
+    {% for i in objects %}
+        <div class="card" style="width: 18rem;">
+            <img src="{{ i.img.url }}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{ i.title }}</h5>
+                <p class="card-text">{{ i.price }}</p>
+                <p class="card-text">{{ i.date }}</p>
+                <a href="{% url 'object:object_detail' i.id %} " class="btn btn-primary w-100">detail</a>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

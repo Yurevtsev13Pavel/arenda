@@ -21,9 +21,7 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
-import arenda
-import prof
-from news.views import new
+
 
 from prof.views import edit_profile
 
@@ -31,7 +29,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('auth.urls', namespace='auth')),
     path('profile/edit/', edit_profile, name='edit_profile'),
-    path('main/', include('news.urls', namespace='main')),
+    path('object/', include('news.urls', namespace='object')),
     path('prof/', include('prof.urls', namespace='prof')),
+    path('report/', include('report.urls', namespace='report')),
+
 
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
