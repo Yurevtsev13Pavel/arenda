@@ -1,9 +1,25 @@
 {% extends 'root.html' %}
 
 {% block content %}
+
     <form action="prof.html" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type="submit" value="создать" >
+        <input type="submit" value="создать">
     </form>
+
+    {% for i in your_report %}
+        <div class="card mt-5">
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <p>{{ i.user_id }}</p>
+                    <p>{{ i.object_id }}</p>
+                    <p>{{ i.comment }}</p>
+
+                    <footer class="blockquote-footer"><cite title="Source Title"><p>{{ i.date }}</p></cite>
+                    </footer>
+                </blockquote>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}
