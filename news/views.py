@@ -18,7 +18,7 @@ class ObjectDetail(FormMixin, DetailView):
     template_name = 'news/object_detail.html'
     context_object_name = 'object'
     form_class = ReportForm
-    success_url = '/prof/'
+    success_url = '/prof/prof/'
 
     def post(self, request, *args, **kwargs):
         form = self.get_form()

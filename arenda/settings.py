@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'prof',
     'news',
     'report',
+    'main',
 ]
 
 MIDDLEWARE = [

@@ -32,6 +32,7 @@ urlpatterns = [
     path('object/', include('news.urls', namespace='object')),
     path('prof/', include('prof.urls', namespace='prof')),
     path('report/', include('report.urls', namespace='report')),
+    path('main/', include('main.urls', namespace='main')),
 
 
 ]

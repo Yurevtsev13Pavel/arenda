@@ -24,7 +24,7 @@
                     <p>{{ i.user_id }}</p>
                     <p>{{ i.object_id }}</p>
                     <p>{{ i.comment }}</p>
-
+                    <a href="{% url 'report:report_delete' i.id %}" class="btn btn-danger">Отменить</a>
                     <footer class="blockquote-footer"><cite title="Source Title"><p>{{ i.date }}</p></cite>
                     </footer>
                 </blockquote>
